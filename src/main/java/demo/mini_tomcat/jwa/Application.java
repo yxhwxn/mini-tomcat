@@ -1,4 +1,4 @@
-package demo.mini_tomcat;
+package demo.mini_tomcat.jwa;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
