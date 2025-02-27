@@ -23,12 +23,15 @@ public class Connector implements Runnable {
     private final ServerSocket serverSocket;
     private boolean stopped;
 
+    // Connector Overload 함으로써 2개의 생성자 추가
+    // 1. port, acceptCount, executorService를 인자로 받는 생성자
     public Connector(final int port, final int acceptCount, final ExecutorService executorService) {
         this.executorService = executorService;
         this.serverSocket = createServerSocket(port, acceptCount);
         this.stopped = false;
     }
 
+    // 2. acceptCount, maxThreads를 인자로 받는 생성자
     public Connector(final int acceptCount, final int maxThreads) {
         this(DEFAULT_PORT, acceptCount, Executors.newFixedThreadPool(maxThreads));
     }

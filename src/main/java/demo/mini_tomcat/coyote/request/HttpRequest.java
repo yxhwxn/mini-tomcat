@@ -6,6 +6,7 @@ import demo.mini_tomcat.coyote.header.HttpHeaders;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import static demo.mini_tomcat.catalina.webutils.IOUtils.readData;
 import static demo.mini_tomcat.coyote.header.HttpHeaderType.CONTENT_LENGTH;
 
 public class HttpRequest {

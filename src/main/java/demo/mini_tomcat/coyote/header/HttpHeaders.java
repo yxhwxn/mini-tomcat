@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static demo.mini_tomcat.catalina.webutils.Parser.removeBlank;
+
 public class HttpHeaders {
     private Map<String, HttpHeader> headers = new LinkedHashMap<>();
 
