@@ -1,4 +1,4 @@
-package demo.mini_tomcat.catalina;
+package demo.mini_tomcat.catalina.startup;
 
 import demo.mini_tomcat.catalina.connector.Connector;
 import org.slf4j.Logger;
@@ -20,7 +20,7 @@ public class Tomcat {
         } catch (IOException e) {
             log.error(e.getMessage(), e);
         } finally {
-            log.info("web server stop.");
+            log.info("tomcat server stop.");
             connector.stop();
         }
     }
