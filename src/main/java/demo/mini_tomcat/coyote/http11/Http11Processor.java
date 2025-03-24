@@ -1,9 +1,11 @@
 package demo.mini_tomcat.coyote.http11;
 
 import demo.mini_tomcat.catalina.RequestMapper;
+import demo.mini_tomcat.coyote.Processor;
 import demo.mini_tomcat.coyote.http11.controller.Controller;
 import demo.mini_tomcat.coyote.request.HttpRequest;
 import demo.mini_tomcat.coyote.response.HttpResponse;
+import demo.mini_tomcat.jwa.exception.UncheckedServletException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +16,7 @@ import java.net.Socket;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class Http11Processor implements Runnable {
+public class Http11Processor implements Runnable, Processor {
 
     private static final Logger log = LoggerFactory.getLogger(Http11Processor.class);
 
