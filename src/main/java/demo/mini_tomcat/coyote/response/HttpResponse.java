@@ -1,5 +1,6 @@
 package demo.mini_tomcat.coyote.response;
 
+import demo.mini_tomcat.coyote.HttpStatus;
 import demo.mini_tomcat.coyote.HttpVersion;
 import demo.mini_tomcat.coyote.header.HttpHeader;
 import demo.mini_tomcat.coyote.header.HttpHeaders;
@@ -8,8 +9,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import static demo.mini_tomcat.coyote.HttpStatus.OK;
 import static demo.mini_tomcat.coyote.header.HttpHeaderType.CONTENT_LENGTH;
-import static demo.mini_tomcat.coyote.response.HttpStatus.OK;
 
 public class HttpResponse {
 
@@ -60,9 +61,17 @@ public class HttpResponse {
     private String generateHeaderLine() {
         final List<String> headers = new ArrayList<>();
         for (String httpHeaderType : this.headers.keySet()) {
+
             final String header = String.join(COLON_LETTER + BLANK_LETTER, httpHeaderType,
+                    String.join(SEMI_COLON_LETTER + BLANK_LETTER, this.headers.get(httpHeaderType).getValues()));
+            headers.add(header);
+
+            /*
+                // Before refactoring
+                final String header = String.join(COLON_LETTER + BLANK_LETTER, httpHeaderType,
                     String.join(SEMI_COLON_LETTER, this.headers.get(httpHeaderType).getValues()));
-            headers.add(header + BLANK_LETTER);
+                headers.add(header + BLANK_LETTER);
+             */
         }
         return String.join(NEW_LINE_LETTER, headers);
     }
