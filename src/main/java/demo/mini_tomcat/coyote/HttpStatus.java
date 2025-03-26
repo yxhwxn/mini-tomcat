@@ -1,4 +1,4 @@
-package demo.mini_tomcat.coyote.response;
+package demo.mini_tomcat.coyote;
 
 public enum HttpStatus {
     OK(200, "OK"),

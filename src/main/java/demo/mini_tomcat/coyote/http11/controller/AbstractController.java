@@ -2,6 +2,7 @@ package demo.mini_tomcat.coyote.http11.controller;
 
 import demo.mini_tomcat.coyote.request.HttpRequest;
 import demo.mini_tomcat.coyote.response.HttpResponse;
+import demo.mini_tomcat.jwa.controller.exception.NotFoundControllerException;
 
 public abstract class AbstractController implements Controller {
     @Override

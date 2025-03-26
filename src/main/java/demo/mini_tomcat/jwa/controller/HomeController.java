@@ -4,7 +4,7 @@ import demo.mini_tomcat.coyote.http11.controller.AbstractController;
 import demo.mini_tomcat.coyote.request.HttpRequest;
 import demo.mini_tomcat.coyote.response.HttpResponse;
 
-import static demo.mini_tomcat.coyote.response.HttpStatus.OK;
+import static demo.mini_tomcat.coyote.HttpStatus.OK;
 
 
 public class HomeController extends AbstractController {

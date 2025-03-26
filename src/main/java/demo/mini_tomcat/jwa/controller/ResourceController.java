@@ -11,10 +11,10 @@ import demo.mini_tomcat.jwa.exception.InternalException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import static demo.mini_tomcat.coyote.HttpStatus.OK;
+import static demo.mini_tomcat.coyote.HttpStatus.REDIRECT;
 import static demo.mini_tomcat.coyote.header.HttpHeaderType.CONTENT_TYPE;
 import static demo.mini_tomcat.coyote.header.HttpHeaderType.LOCATION;
-import static demo.mini_tomcat.coyote.response.HttpStatus.OK;
-import static demo.mini_tomcat.coyote.response.HttpStatus.REDIRECT;
 
 public class ResourceController extends AbstractController {
 
