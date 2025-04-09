@@ -1,4 +1,4 @@
-package demo.mini_tomcat.catalina.connector;
+package demo.mini_tomcat.coyote.connector;
 
 
 import demo.mini_tomcat.coyote.http11.Http11Processor;
@@ -23,21 +23,10 @@ public class Connector implements Runnable {
     private final ServerSocket serverSocket;
     private boolean stopped;
 
-    // Connector Overload 함으로써 2개의 생성자 추가
-    // 1. port, acceptCount, executorService를 인자로 받는 생성자
     public Connector(final int port, final int acceptCount, final ExecutorService executorService) {
         this.executorService = executorService;
         this.serverSocket = createServerSocket(port, acceptCount);
         this.stopped = false;
-    }
-
-    // 2. acceptCount, maxThreads를 인자로 받는 생성자
-    public Connector(final int acceptCount, final int maxThreads) {
-        this(DEFAULT_PORT, acceptCount, Executors.newFixedThreadPool(maxThreads));
-    }
-
-    public Connector() {
-        this(DEFAULT_PORT, DEFAULT_ACCEPT_COUNT, Executors.newCachedThreadPool());
     }
 
     private ServerSocket createServerSocket(final int port, final int acceptCount) {
@@ -48,6 +37,10 @@ public class Connector implements Runnable {
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
+    }
+
+    public Connector(final int acceptCount, final int maxThreads) {
+        this(DEFAULT_PORT, acceptCount, Executors.newFixedThreadPool(maxThreads));
     }
 
     public void start() {

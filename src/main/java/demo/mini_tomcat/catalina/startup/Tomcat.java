@@ -1,6 +1,6 @@
 package demo.mini_tomcat.catalina.startup;
 
-import demo.mini_tomcat.catalina.connector.Connector;
+import demo.mini_tomcat.coyote.connector.Connector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
